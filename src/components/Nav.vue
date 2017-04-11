@@ -4,16 +4,16 @@
 			<div class="nav-head">
 				<div class="avatar"></div>
 				<div class="user-name">{{ username }}</div>
-			<div class="my-name">panzhiwei</div>
+				<div class="my-name">make by panzhiwei</div>
 			</div>
 			<ul class="nav-list">
+				<li style="height:150px"></li>
 				<li title="首页" data-id="0" @click="tolist(0, '首页')">首页</li>
 				<li v-for="sub in subList" :title="sub.description" :data-id="sub.id" @click="tolist(sub.id, sub.name)"> {{ sub.name }} </li>
 				<li v-for="list in othersList" :title="list.description" :data-id="list.id" @click="tolist(list.id, list.name)"> {{ list.name }} </li>
-				<!--<li data-id="-1"><a href="https://github.com/dclcats/vue-zhihudaily">GitHub</a></li>-->
+				<li data-id="-1"><a href="https://github.com/poipo/daily-Vue">GitHub</a></li>
 			</ul>
 		</div>
-		<!-- <div class="nav-mark" :class="{opmark: nav}"></div> -->
 	</div>
 </template>
 
@@ -35,9 +35,7 @@
 	            nav: state => state.nav,
 	        })
 		},
-		// computed() {
 		mounted() {
-		// created() {
 			var that = this;
 			api.getMessage('newsThemes').then(function(data) {
 				// console.log(data)
@@ -163,7 +161,7 @@
 				width: 100px;
 				height: 100px;
 				border-radius: 100px;
-				background: #000 url('../assets/logo.png') left top no-repeat;
+				background: #000 url('../assets/logo.jpg') left top no-repeat;
 				background-size: contain;
 			}
 			.user-name {
@@ -173,9 +171,7 @@
 				text-align: center;
 				// font-weight: bold;
 				color:#fff;
-			}
-			.my-name{
-				
+				margin-top:-26px;
 			}
 		}
 
@@ -186,19 +182,36 @@
 			width: 100%;
 			height: 100%;
 			padding: 0;
-			padding-top:128px;
+			// padding-top:128px;
+			margin-top:-10px;
 			line-height: 70px;
 			text-align: left;
 			overflow-y: scroll;
 
 			li {
 				padding-left: 24px;
+
+				a, a:hover, a:visited, a:link, a:active {
+				text-decoration: none;
+				color: #4786b3;
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+				}	
 			}
 
 			.nav-choice {
 				background-color: #eee;
 				color: #666;
 			}
+			
+			.github{
+				text-decoration:none;
+			}
 		}
 	}
+	.my-name{
+			position:absolute;
+			right:40px;
+			bottom:-18px;
+			color:#fff;
+			}
 </style>

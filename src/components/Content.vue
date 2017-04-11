@@ -87,6 +87,17 @@
 		word-break:break-all;
 		font-family:Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
 
+		a, a:hover, a:visited, a:link, a:active {
+				text-decoration: none;
+				color: #4786b3;
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+		}
+
+		.headline{
+			margin:30px 0 10px;
+			padding: 0 16px;
+		}
+
 		h1 {
 			font-size: 40px;
 			line-height: 50px;
@@ -102,7 +113,7 @@
 			height: 38px;
 			line-height: 38px;
 			// margin-bottom: 26px;
-			width: 588px;
+			width: 95%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
@@ -167,6 +178,10 @@
     padding: 0 12px;
 	}
 	.question + .question {
-    border-top: 5px solid #f6f6f6;
+    border-top: 5px solid #f5f5f5;
+	}
+	.answer + .answer {
+    padding-top: 50px;
+		border-top: 3px solid #f5f5f5;
 	}
 </style>

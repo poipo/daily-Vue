@@ -204,6 +204,13 @@
 	p {
 		margin: 0;
 	}
+	
+	.list:before{
+		content:'';
+		display:block;
+		height:100px;
+	}
+
 	.list {
 		position: absolute;
 		top: 0;
@@ -212,7 +219,6 @@
 		z-index: 1;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
-    margin-top:79px;
 		background-color:#eee;
 
 		.loading {
@@ -241,7 +247,7 @@
 				font-weight: bold;
 			}
 			ul {
-				margin: 0 20px;
+				margin: 20px 20px ;
 				padding: 0;
 				background-color:#eee;
 
