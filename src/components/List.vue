@@ -1,6 +1,12 @@
 <template>
 	<div class="list">
-		<div class="loading" v-if="loading">Loading...</div>
+		<div class="loading" v-if="loading">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
 		<div class="list-con">
 			<div v-if="getdone" v-for="data in datas">
 				<div class="top-slide top" v-if="!!data.top_stories">
@@ -33,7 +39,13 @@
 
 		</div>
 
-		<div v-if="getdone" class="more-load" :class="{dbload: homepage}">loading...</div>
+		<div v-if="getdone" class="more-load" :class="{dbload: homepage}">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
 		
 	</div>
 </template>
@@ -74,7 +86,7 @@
 			this.routetimes = true
 			if(!rid || rid === '0') {
 				this.homepage = true
-				this.$store.commit('setTitleName', '今日热闻')
+				this.$store.commit('setTitleName', '首页')
 				document.querySelector('.list').addEventListener('scroll',this.lazyLoad);
 			} else {
 				this.homepage = false
@@ -226,7 +238,7 @@
 			// height: calc(100%-400px);
 			width: 100%;
 			font-size: 34px;
-			padding-top: 400px;
+			padding-top: 100px;
 		}
 
 		.top-slide {
@@ -239,12 +251,13 @@
 			font-size: 0;
 
 			&>p {
-				// background-color: #5886e8;
-				height: 58px;
-				line-height: 58px;
-				font-size: 24px;
-				color: #ccc;
-				font-weight: bold;
+				height: 50px;
+				line-height: 80px;
+				font-size: 22px;
+				color: #999;
+				// font-weight: bold;
+				text-align:left;
+				margin-left:30px;
 			}
 			ul {
 				margin: 20px 20px ;
@@ -262,6 +275,8 @@
 					border: {
 						top: 1px solid #ddd;
 					} 
+					border-radius:6px;
+					box-shadow:0px 2px 6px #ccc;
 
 					p {
 						flex: 1;
@@ -291,15 +306,13 @@
 	.more-load {
 		display: none;
 		line-height: 70px;
-		font-size: 23px;
-		// padding: 0 14px 0;
+		font-size: 26px;
+		color:#999;
 		text-align: center;
 		font-weight: bold;
 		height: 70px;
 		padding: 3px 0;
-		border: {
-			top: 1px solid #ddd;
-		}
+		margin-top:-100px;
 	}
 	.dbload {
 		display: block;
@@ -335,12 +348,52 @@
 				bottom: 23px;
 				text-align: left;
 				line-height: 44px;
-				max-width: 600px;
-				left: 50%;
-				margin-left: -300px;
+				max-width: 560px;
+				// left: 50%;
+				margin-left: 30px;
 			}
 		}
+	}
+	.spinner {
+		margin: 100px auto 0;
+		width: 100px;
+		text-align: center;
+	}
 
+	.spinner > div {
+		width: 18px;
+		height: 18px;
+		background-color :#4786b3;
+
+		border-radius: 100%;
+		display: inline-block;
+		-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	}
+
+	.spinner .bounce1 {
+		-webkit-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+
+	.spinner .bounce2 {
+		-webkit-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+
+	@-webkit-keyframes sk-bouncedelay {
+		0%, 80%, 100% { -webkit-transform: scale(0) }
+		40% { -webkit-transform: scale(1.0) }
+	}
+
+	@keyframes sk-bouncedelay {
+		0%, 80%, 100% { 
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		} 40% { 
+			-webkit-transform: scale(1.0);
+			transform: scale(1.0);
+		}
 	}
 		
 </style>
