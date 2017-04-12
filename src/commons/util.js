@@ -1,5 +1,5 @@
 
-import Mock from "mockjs";
+import Mock from " ";
 
 const mock = Mock.mock;
 

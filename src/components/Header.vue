@@ -13,7 +13,7 @@
 	export default {
 		data() {
 			return {
-				// title: "今日热闻"
+				
 			}
 		},
 		computed: {
