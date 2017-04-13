@@ -24,7 +24,7 @@
 					</swiper>
 				</div>
 				<div class="list-message" v-if="!!data.stories">
-					<p v-if="!!data.date && !data.top_stories">{{data.date}}</p>
+					<p >{{data.top_stories?'今日新闻':data.date}}</p>
 					<img v-if="!data.date && !!data.image" :src='"http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=" + data.image'  :alt="data.name">
 					<ul>
 						<li v-for="list in data.stories" @click="toContent(list.id)" :data-id="list.id">
@@ -167,7 +167,7 @@
 					
 					
 				}).catch(err => {
-					console.log(err);
+					// console.log(err);
 				});
 				setInterval(() => {
 					// console.log('simulate async data')
@@ -244,21 +244,26 @@
 		.top-slide {
 			// width: 100%;
 			// height: 440px;
-
+			margin-bottom:10px;
 		}
 
 		.list-message {
 			font-size: 0;
 
 			&>p {
-				height: 50px;
+				height: 40px;
 				line-height: 80px;
-				font-size: 22px;
+				font-size: 20px;
 				color: #999;
 				// font-weight: bold;
 				text-align:left;
 				margin-left:30px;
 			}
+
+			&>img{
+				margin-top:-40px;
+			}
+
 			ul {
 				margin: 20px 20px ;
 				padding: 0;

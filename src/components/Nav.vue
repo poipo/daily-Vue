@@ -71,7 +71,7 @@
 	        },
 	        tolist(id, cname) {
 	        	if(id === 0) {
-	        		this.$store.commit('setTitleName', '今日热闻')
+	        		this.$store.commit('setTitleName', '首页')
 	        	} else {
 	        		this.$store.commit('setTitleName', cname )
 	        	}
@@ -109,7 +109,7 @@
 		}
 	}
 	.nav {
-		position: fixed;
+		position: absolute;
 		width: 100%;
 		height: 100%;
 		line-height: 34px;

@@ -13,17 +13,12 @@
             </keep-alive>
             
         </transition>
-        <my-footer v-if="!head"></my-footer>
-        <!-- <div v-if="!head" class="footer">
-            <p @click="backroute"><=</p>
-        </div> -->
     </div>
 </template>
 
 <script>
 
 import myHeader from "./components/Header"
-import myFooter from "./components/Footer"
 import myNav from "./components/Nav"
 import { mapState } from "vuex"
 
@@ -49,8 +44,7 @@ export default {
     },
     components: {
         myHeader,
-        myNav,
-        myFooter
+        myNav
     },
     methods: {
         toggleHead() {

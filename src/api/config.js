@@ -10,5 +10,4 @@ const config1 = {
 	method: '/get?api='
 }
 
-// export const API_ROOT = config.protocol.concat(config.common)
 export const API_ROOT = '/api'

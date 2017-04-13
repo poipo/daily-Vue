@@ -87,7 +87,7 @@
 	.article {
 		position: relative;
 		padding: 4px 26px;
-		margin-bottom: 67px;
+		margin-bottom: 40px;
 		text-align: left;
 		font-size: 26px;
 		line-height: 44px;
@@ -164,7 +164,7 @@
 			text-align: center;
 			height: 56px;
 			line-height: 52px;
-			margin: 19px 0 30px;
+			margin: 30px 0 ;
 
 			a {
 				display: block;
