@@ -274,7 +274,7 @@
 					align-items: center;
 					height: 156px;
 					padding: 3px 0;
-					margin-top:10px;
+					margin-top:15px;
 					background-color:#fff;
 					padding:0 10px;
 					border: {

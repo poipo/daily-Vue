@@ -38,7 +38,6 @@
 		mounted() {
 			console.log('app init')
 			setTimeout(() => {
-				// this.banners.push('/5.jpg')
 				console.log('banners update')
 			}, 3000)
 
