@@ -54,5 +54,13 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  vue: {
+        postcss: [
+            require('autoprefixer')(),
+        ]
+    },
+    postcss: [
+        require('autoprefixer')(),
+    ]
 }
